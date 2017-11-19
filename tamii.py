@@ -5,84 +5,91 @@ from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
 from bs4 import BeautifulSoup
 import time, random, sys, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia
+from urllib import urlopen
+import urllib2
+import urllib3
+import tempfile
+import html5lib
+import urllib
+import requests
 
 cl = LINETCR.LINE()
-cl.login(token="EmZMiC3V1ZV70KrEMMw6.TZBfSxLpwQmajTfI0hZL5G.11k6S1sUlX9SbdA8oDJustBIJVGyobI+e3SFkBE2g8g=")
+cl.login(token="Em1MLKWf2rYhXqF6Izb8.t0uzqyjD9cgRN/IdWhSi2a.MJJqIhbXAZuk9CL7DbotNLpfdAAXj5daZgF5RNGTLu4=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EmfUsg0drkp2fEBi9Qrb.BNyZ+h9RxCUErhI47z2TsW.zP88/CrIW13pa4qwh5FWcAP0dO+OfD820zCPF4pX5oc=")
+ki.login(token="Em0AFj3MFBnEL1o2Dwna.h3KqNoP0JeN8FrJP6uiJoG.BF/eb2AEL8Mu4v3CRWVYgfdnZusOHDhQ7enORpnX3K4=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="EmspKirwbEjemqqHJUb7.PxA11UvF6+oIj1J2xHVgHW.DD+N4SDD7wvuasJsGnmW5plCMBHpI1kffIFV9ma44Kc=")
+kk.login(token="EmcdGcr39siPjyfjUHU8.DTbDh/XY1svG6guOLGgrEa.J9aK10nBHHPamoTrpNycY3jwIpaokHSUe4DKrMyCblM=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="EmdpE54Je1ojetkXmKQd.3ZijQj/+HYJ/+9NTGXTdBq.Dkv3tBOnJ4DsvFu6ER5mK2zR7h0FRAW0/FJyZiSD2Fs=")
+kc.login(token="EmKkIYjfelsmgNiXTIh2.KpKWyorTPY1wwWUHFd03OG.yUrwPRkpJqbiZ1tohkh7+SpX1TWpUP+/RVUdTkhEgAg=")
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token="Emesgp6g4xLptFAcKEe2.HczpEpY3698wuSB+TzCDKG.vFtZpDippE+ZkQxxVEDn1BmpjyM+z+f/x4/Lo+cAFlk=")
+kd.login(token="EmllAMjlbuZXcuGB3Icf.7I8ZPERZDnDxt4+rBdMTlW.as/wQesc1IqyojkUIln11tZZBZ26qIpFEb0mINH9ud8=")
 kd.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="EmMtwsiInIfBXPVS5fYa.i/2QVqxGpVzmWQXItt4HYG.cfbtejgIlGQE3TTAg7FlMWcE1/6kwokKNe3wDg1gztM=")
+ke.login(token="EmabC3fOGOWwmEygtp13.x29XInczKFNk/xybxHWLaW.thsEmz8zYjLz9BgPilr6+jNr/yWRzZssIwWxluictW4=")
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="EmCxepD4zQoJp5IhDbta.DP7HM0ARnuIu/2g0+3pMUG./+3rQ+luem39IsiuASywPOVjmG+0TpJhMpmZowgn8yI=")
+kf.login(token="EmV3Z7jQ9Wg9FZWwPs1a.EZrmTlyikc+xw1PbTxMkMG.ad92k8jIFR2mSsvn6MzMeJBEPpWY6xdlVCAVPUD9bIo=")
 kf.loginResult()
 
 kg = LINETCR.LINE()
-kg.login(token="Eme45nZDSATx9C6vYxRa.M5S4YxDWvhoYOasbMPWroG.Tq/iSCV68m9567XK4xxEGSXOAOVJEPwNW+odUm/BwT4=")
+kg.login(token="EmwnVm7w7q6NlRziTL3d.cwB+CDbraDzJDa9X1PRpxq.GzQZOQbUdJHQyru23nhTyM52/ycsmG+rg9q1kfjah2I=")
 kg.loginResult()
 
-kh = LINETCR.LINE()
-kh.login(token="EmIRhD60WnHD3t4FET34.9gH7ABV+xQLJo9i7SbFX5a.Yr0Yii0G3ouW7kOEMdXrPongIIs0Q2ab9Q0xUiRLfHI=")
-kh.loginResult()
+#kh = LINETCR.LINE()
+#kh.login(token="EmIRhD60WnHD3t4FET34.9gH7ABV+xQLJo9i7SbFX5a.Yr0Yii0G3ouW7kOEMdXrPongIIs0Q2ab9Q0xUiRLfHI=")
+#kh.loginResult()
 
-kj = LINETCR.LINE()
-kj.login(token="EmLppwNR3nIRHTOtPilb.8udcfgLi7ehlJbE2o+xCkW.QzwPU+t85FDCd/TcU0H5NdPq0MUzuCXRzaZPRp1O/mY=")
-kj.loginResult()
+#kj = LINETCR.LINE()
+#kj.login(token="EmLppwNR3nIRHTOtPilb.8udcfgLi7ehlJbE2o+xCkW.QzwPU+t85FDCd/TcU0H5NdPq0MUzuCXRzaZPRp1O/mY=")
+#kj.loginResult()
 
-kl = LINETCR.LINE()
-kl.login(token="EmYDhAhUQqmCaUB8SZA4.XzkQX6Z6SKas/aWEdxhG9a.HTgYRulRHxXSc+72zLVfT2VLIRVZvh4ImQvEtU6KxBg=")
-kl.loginResult()
+#kl = LINETCR.LINE()
+#kl.login(token="EmYDhAhUQqmCaUB8SZA4.XzkQX6Z6SKas/aWEdxhG9a.HTgYRulRHxXSc+72zLVfT2VLIRVZvh4ImQvEtU6KxBg=")
+#kl.loginResult()
 
-km = LINETCR.LINE()
-km.login(token="EmCXaH6hkxN7L4iWpyGa.M18YOGKVCrQRdiHWLocYoG.Bga5dUzA36+J0GekTRX7Sz5R9vrUWYaxXn7rGrXUPBc=")
-km.loginResult()
+#km = LINETCR.LINE()
+#km.login(token="EmCXaH6hkxN7L4iWpyGa.M18YOGKVCrQRdiHWLocYoG.Bga5dUzA36+J0GekTRX7Sz5R9vrUWYaxXn7rGrXUPBc=")
+#km.loginResult()
 
-kn = LINETCR.LINE()
-kn.login(token="EmjOueAJz9I4iNjWUPm0.xk6CFUa1TffEm+BFjYuhCa.pk6HGOsm6rlBtQLo4D48hQAaLUBlOgUJx0qGfVEpyc8=")
-kn.loginResult()
+#kn = LINETCR.LINE()
+#kn.login(token="EmjOueAJz9I4iNjWUPm0.xk6CFUa1TffEm+BFjYuhCa.pk6HGOsm6rlBtQLo4D48hQAaLUBlOgUJx0qGfVEpyc8=")
+#kn.loginResult()
 
-ko = LINETCR.LINE()
-ko.login(token="Em44M0djUhjilmwO5eW4.gNyro7TbVPOq9q7KfxZ6ja.fD1FXX13tI04xIuOkhGBE5+F3sywEuweexo1C/GxJ1U=")
-ko.loginResult()
+#ko = LINETCR.LINE()
+#ko.login(token="Em44M0djUhjilmwO5eW4.gNyro7TbVPOq9q7KfxZ6ja.fD1FXX13tI04xIuOkhGBE5+F3sywEuweexo1C/GxJ1U=")
+#ko.loginResult()
 
-kp = LINETCR.LINE()
-kp.login(token="Emm6NUELDiThHb11mo63.beFYyPfuxT1XkkxB0z7bOW.iKoovhLczCH/Pd0VtVxhYA/x5NpywVyBiceIZwcxI2s=")
-kp.loginResult()
+#kp = LINETCR.LINE()
+#kp.login(token="Emm6NUELDiThHb11mo63.beFYyPfuxT1XkkxB0z7bOW.iKoovhLczCH/Pd0VtVxhYA/x5NpywVyBiceIZwcxI2s=")
+#kp.loginResult()
 
-kq = LINETCR.LINE()
-kq.login(token="EmTyM8gXpOZkJwy0hnK3.Zcwf6HrGpji9sCc98VTOeW.suZo5gb/3FZ2hEFhe2+t+gomNdr1GnH0566EGnElV58=")
-kq.loginResult()
+#kq = LINETCR.LINE()
+#kq.login(token="EmTyM8gXpOZkJwy0hnK3.Zcwf6HrGpji9sCc98VTOeW.suZo5gb/3FZ2hEFhe2+t+gomNdr1GnH0566EGnElV58=")
+#kq.loginResult()
 
-kr = LINETCR.LINE()
-kr.login(token="Emaas45PFxDMQU2svLIa.r5CTm/T+B9J2h3ZXLAhq6G.od8/LyM8B5Luv7HiYiew3n0zS1uLfsyqd5Nja1SeApM=")
-kr.loginResult()
+#kr = LINETCR.LINE()
+#kr.login(token="Emaas45PFxDMQU2svLIa.r5CTm/T+B9J2h3ZXLAhq6G.od8/LyM8B5Luv7HiYiew3n0zS1uLfsyqd5Nja1SeApM=")
+#kr.loginResult()
 
-ks = LINETCR.LINE()
-ks.login(token="Emwfi9Mdukz6QroWpHQ7.bHov9ONJEzx2Ya/PwMshPW.0DaYTC4xiCU3AaklyQNCVxoRowvu47htNMQNGM/Jpo8=")
-ks.loginResult()
+#ks = LINETCR.LINE()
+#ks.login(token="Emwfi9Mdukz6QroWpHQ7.bHov9ONJEzx2Ya/PwMshPW.0DaYTC4xiCU3AaklyQNCVxoRowvu47htNMQNGM/Jpo8=")
+#ks.loginResult()
 
-kt = LINETCR.LINE()
-kt.login(token="EmLX3yrZguae6q822s49.HKYa3NeUc1iHvq5GaRXJgq.yAuKmCAeoHK8R/5p65i8x1N8Ek1an6ywPurnBBEq/jQ=")
-kt.loginResult()
+#kt = LINETCR.LINE()
+#kt.login(token="EmLX3yrZguae6q822s49.HKYa3NeUc1iHvq5GaRXJgq.yAuKmCAeoHK8R/5p65i8x1N8Ek1an6ywPurnBBEq/jQ=")
+#kt.loginResult()
 
-print "Tamii Bot"
+print "Shandy Bot"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 helpMessage ="""
@@ -126,7 +133,7 @@ helpMessage ="""
 ��✒ Gurl
 ��✒ Glist
 ��✒ Say
-��✒ Set
+��✒ Setting
 ��✒ Gcancel: number
 ��✒ Masuk / Join
 ��✒ Sayang
@@ -188,11 +195,12 @@ helpMessage ="""
 ��✒ Namelock On/off
 
 ��✒ Creator 👇👇
-��✒ http://line.me/ti/p/jlEouH0zr3
+��✒ http://line.me/ti/p/qTG-ajpkH6
 
-��✒ C͍͇̪̲͎̯͎̫̩̽̅̈́̅̌́̍̐ŗ̛͔̳͔̦́̋͛̎e̶̮̳͕͍̺̼̱͎͛̃̾̍̑̐ǻ͕͍̻̭̟̪͒́́̎̕͘̕͟t̢̠̻̗̠͙̦͒̉̈̎͂̐͒͑o̸̡̲̜̯̤͚̠̬͊̓̌̄̒͠r̵̺̲̗̩͙̐̇̾̐͐̏̃̓́̊ B̝̪̭͓͍̺͐͂̑̅̓͗͗̈́͢y͚͔̝͖̮̤͚̅̉̑̐̓̀̋̊͂͜͜͢͞:̶̨̻̪͓̦̻̋̾̂̽̎͘͜͜ Ţ̸̡̫̙͎̰̜͎͚̎̀͗̌̏͛͌͜a̛̛̪̱̳͉͚̹̣̦̼͒͗͆̿͋͡͠m̰̬͇̭̔̓́̓͢͞ĩ̡̢̥̰̤̗̩̥̥̫́̐̔̾̾͂̚͠͝i̴͙̦̹̫̾̈̿̈́̊̃̆͒͜͢͞ ��✒•┅───── """
+��✒ C͍͇̪̲͎̯͎̫̩̽̅̈́̅̌́̍̐ŗ̛͔̳͔̦́̋͛̎e̶̮̳͕͍̺̼̱͎͛̃̾̍̑̐ǻ͕͍̻̭̟̪͒́́̎̕͘̕͟t̢̠̻̗̠͙̦͒̉̈̎͂̐͒͑o̸̡̲̜̯̤͚̠̬͊̓̌̄̒͠r̵̺̲̗̩͙̐̇̾̐͐̏̃̓́̊ B̝̪̭͓͍̺͐͂̑̅̓͗͗̈́͢y͚͔̝͖̮̤͚̅̉̑̐̓̀̋̊͂͜͜͢͞:̶̨̻̪͓̦̻̋̾̂̽̎͘͜͜ 👉Shandy😈 ��✒•┅───── """
 
-KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,km,kn,ko,kp,kq,kr,ks,kt]
+
+KAC=[cl,ki,kk,kc,kd,ke,kf,kg]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
@@ -201,17 +209,17 @@ Dmid = kd.getProfile().mid
 Emid = ke.getProfile().mid
 Fmid = kf.getProfile().mid
 Gmid = kg.getProfile().mid
-Hmid = kh.getProfile().mid
-Jmid = kj.getProfile().mid
-Lmid = kl.getProfile().mid
-Mmid = km.getProfile().mid
-Nmid = kn.getProfile().mid
-Omid = ko.getProfile().mid
-Pmid = kp.getProfile().mid
-Qmid = kq.getProfile().mid
-Rmid = kr.getProfile().mid
-Smid = ks.getProfile().mid
-Tmid = kt.getProfile().mid
+#Hmid = kh.getProfile().mid
+#Jmid = kj.getProfile().mid
+#Lmid = kl.getProfile().mid
+#Mmid = km.getProfile().mid
+#Nmid = kn.getProfile().mid
+#Omid = ko.getProfile().mid
+#Pmid = kp.getProfile().mid
+#Qmid = kq.getProfile().mid
+##Rmid = kr.getProfile().mid
+#Smid = ks.getProfile().mid
+#Tmid = kt.getProfile().mid
 protectname = []
 protecturl = []
 protection = []
@@ -219,9 +227,11 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 targets = []
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Mmid,Nmid,Omid,Pmid,Qmid,Rmid,Smid,Tmid]
-admin = ["ub736c5b1794f5aa30026d162d07ce5e6",mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Mmid,Nmid,Omid,Pmid,Qmid,Rmid,Smid,Tmid]
-owner = ["ub736c5b1794f5aa30026d162d07ce5e6",mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Mmid,Nmid,Omid,Pmid,Qmid,Rmid,Smid,Tmid]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid]
+admin = ["u4f451941825df421ab9fe883c07b08d8",mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid]
+owner = ["u4f451941825df421ab9fe883c07b08d8",mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid]
+
+
 wait = {
     'contact':False,
     'autoJoin':False,
@@ -229,9 +239,9 @@ wait = {
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':False,
-    'message':"Thanks for add Me MY NAME IS TAMII",
+    'message':"Thanks for add Me http://line.me/ti/p/qTG-ajpkH6",
     "lang":"JP",
-    "comment":"AutoLike by Tamii",
+    "comment":"AutoLike by http://line.me/ti/p/qTG-ajpkH6",
     "commentOn":True,
     "commentBlack":{},
     "wblack":False,
@@ -251,7 +261,9 @@ wait = {
     "pnharfbot":{},
     "pname":{},
     "pro_name":{},
+    "copy":False,
     }
+
 wait2 = {
     'readPoint':{},
     'readMember':{},
@@ -323,71 +335,71 @@ backup.displayName = contact.displayName
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
 
-contact = kh.getProfile()
-backup = kh.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kh.getProfile()
+#backup = kh.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kj.getProfile()
-backup = kj.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kj.getProfile()
+#backup = kj.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kl.getProfile()
-backup = kl.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kl.getProfile()
+#backup = kl.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = km.getProfile()
-backup = km.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = km.getProfile()
+#backup = km.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kn.getProfile()
-backup = kn.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kn.getProfile()
+#backup = kn.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = ko.getProfile()
-backup = ko.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = ko.getProfile()
+#backup = ko.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kp.getProfile()
-backup = kp.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kp.getProfile()
+#backup = kp.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kq.getProfile()
-backup = kq.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kq.getProfile()
+#backup = kq.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kr.getProfile()
-backup = kr.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kr.getProfile()
+#backup = kr.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = ks.getProfile()
-backup = ks.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = ks.getProfile()
+#backup = ks.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
-contact = kt.getProfile()
-backup = kt.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+#contact = kt.getProfile()
+#backup = kt.getProfile()
+#backup.displayName = contact.displayName
+#backup.statusMessage = contact.statusMessage
+#backup.pictureStatus = contact.pictureStatus
 
 
 def upload_tempimage(client):
@@ -410,7 +422,7 @@ def yt(query):
     with requests.session() as s:
          isi = []
          if query == "":
-             query = "S1B tanysyz"   
+             query = "S1B tanysyz"
          s.headers['user-agent'] = 'Mozilla/5.0'
          url    = 'http://www.youtube.com/results'
          params = {'search_query': query}
@@ -502,7 +514,7 @@ def sendImageWithURL(self, to_, url):
          self.sendImage(to_, path)
       except Exception as e:
          raise e
- 
+
 def post_content(self, urls, data=None, files=None):
         return self._session.post(urls, headers=self._headers, data=data, files=files)
 def sendMessage(to, text, contentMetadata={}, contentType=0):
@@ -550,7 +562,7 @@ def RECEIVE_MESSAGE(op):
                 pass
         else:
             pass
-          
+
     except KeyboardInterrupt:
 				sys.exit(0)
     except Exception as error:
@@ -867,13 +879,14 @@ def bot(op):
 #===========================================
         if op.type == 32:
             if not op.param2 in Bots:
-                if wait["protectionOn"] == True: 
+                if wait["protectionOn"] == True:
                     try:
                         klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
-                        kicker = random.choice(klist) 
+                        kicker = random.choice(klist)
                         G = kicker.getGroup(op.param1)
                         kicker.kickoutFromGroup(op.param1,[op.param2])
-                        kicker.inviteIntoGroup(op.param1, [op.param3])
+                        kicker.inviteIntoGroup(op.param1, [op.param2])
+                        kicker.cancelGroupInvitation(op.param1,[op.param2])
                     except Exception, e:
                        print e
         if op.type == 13:
@@ -948,40 +961,48 @@ def bot(op):
                     kk.cancelGroupInvitation(op.param1, matched_list)
         if op.type == 11:
             if not op.param2 in Bots:
-              if wait["qr"] == True:  
+              if wait["qr"] == True:
                 try:
                     klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
-                    kicker = random.choice(klist) 
-                    G = kicker.getGroup(op.param1)
-                    G.preventJoinByTicket = True
-                    kicker.updateGroup(G)
-                except Exception, e:
-                    print e
-        if op.type == 11:
-            if not op.param2 in Bots:
-              if wait["protectionOn"] == True:
-                 try:                    
-                    klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
-                    kicker = random.choice(klist) 
+                    kicker = random.choice(klist)
                     G = kicker.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kicker.updateGroup(G)
                     kicker.kickoutFromGroup(op.param1,[op.param2])
+                    kicker.updateGroup(G)
+                except Exception, e:
+                    print e
+
+        if op.type == 11:
+            if not op.param2 in Bots:
+              if wait["protectionOn"] == True:
+                 try:
+                    klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
+                    kicker = random.choice(klist)
+                    G = kicker.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    kicker.updateGroup(G)
+                    kicker.kickoutFromGroup(op.param1,[op.param2])
+                    kicker.cancelGroupInvitation(op.param1,[op.param2])
+                    kicker.inviteIntoGroup(op.param1, [op.param2])
                     G.preventJoinByTicket = True
                     kicker.updateGroup(G)
                  except Exception, e:
                            print e
+
         if op.type == 13:
             G = cl.getGroup(op.param1)
             I = G.creator
             if not op.param2 in Bots:
-                if wait["protectionOn"] == True:  
+                if wait["protectionOn"] == True:
                     klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
                     kicker = random.choice(klist)
                     G = kicker.getGroup(op.param1)
                     if G is not None:
                         gInviMids = [contact.mid for contact in G.invitee]
                         kicker.cancelGroupInvitation(op.param1, gInviMids)
+                        kicker.kickoutFromGroup(op.param1,[op.param2])
+
         if op.type == 19:
                 if not op.param2 in Bots:
                     try:
@@ -995,17 +1016,18 @@ def bot(op):
                                 json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                            except:
                             pass
-                                
+
                     except Exception, e:
                         print e
                 if not op.param2 in Bots:
                   if wait["Backup"] == True:
                     try:
-                        random.choice(KAC).inviteIntoGroup(op.param1, [op.param3])
+                        random.choice(KAC).inviteIntoGroup(op.param1, [op.param2])
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                     except Exception, e:
                         print e
                 if not op.param2 in Bots:
-                  if wait["protectionOn"] == True:  
+                  if wait["protectionOn"] == True:
                    try:
                        klist=[ki,kk,kc,kd,ke,kf,kg,kh,kj,kn,ko,kp,kq,kr,ks,kt]
                        kicker = random.choice(klist)
@@ -1014,13 +1036,13 @@ def bot(op):
                        kicker.updateGroup(G)
                        invsend = 0
                        Ticket = kicker.reissueGroupTicket(op.param1)
-                       kl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                       kg.acceptGroupInvitationByTicket(op.param1,Ticket)
                        time.sleep(0.2)
-                       X = kicker.getGroup(op.param1)             
+                       X = kicker.getGroup(op.param1)
                        X.preventJoinByTicket = True
-                       kl.kickoutFromGroup(op.param1,[op.param2])
+                       kg.kickoutFromGroup(op.param1,[op.param2])
                        kicker.kickoutFromGroup(op.param1,[op.param2])
-                       kl.leaveGroup(op.param1)
+                       kg.leaveGroup(op.param1)
                        kicker.updateGroup(X)
                    except Exception, e:
                             print e
@@ -1036,19 +1058,21 @@ def bot(op):
                                 json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                            except:
                             pass
-                                
+
                     except Exception, e:
                         print e
                 if not op.param2 in Bots:
                   if wait["Backup"] == True:
                     try:
                         random.choice(KAC).inviteIntoGroup(op.param1, [op.param3])
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param3])
                     except Exception, e:
                         print e
-        if op.type == 19:              
+
+        if op.type == 19:
                 if mid in op.param3:
                     if op.param2 in Bots:
-                        pass                   
+                        pass
                     try:
                         ki.kickoutFromGroup(op.param1,[op.param2])
                     except:
@@ -2575,18 +2599,6 @@ def bot(op):
                     profile.statusMessage = string
                     kt.updateProfile(profile)
                     cl.sendText(msg.to,"Bio berubah menjadi " + string + "")
-                if msg.text == "set":
-                    sendMessage(msg.to, "I have set a read point ♪\n「tes」I will show you who I have read ♪")
-                    try:
-                        del wait['readPoint'][msg.to]
-                        del wait['readMember'][msg.to]
-                    except:
-                        pass
-                    wait['readPoint'][msg.to] = msg.id
-                    wait['readMember'][msg.to] = ""
-                    wait['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-                    wait['ROM'][msg.to] = {}
-                    print wait
             elif "Myname:" in msg.text:
                 string = msg.text.replace("Myname:","")
                 if len(string.decode('utf-8')) <= 20:
@@ -2974,6 +2986,7 @@ def bot(op):
                         cl.sendText(msg.to,"Protection Off\n\n"+ datetime.today().strftime('%H:%M:%S'))
                     else:
                         cl.sendText(msg.to,"Already off\n\n"+ datetime.today().strftime('%H:%M:%S'))
+
             elif "Namelock:on" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"ƬƲƦƝЄƊ ƠƝ.")
@@ -3287,12 +3300,8 @@ def bot(op):
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Already。")
 
-
-            elif msg.text in ["Set"]:
-            	print "Setting pick up..."
-                md = "[☸]�� SETTING ADMIN ONLY ��[☸]\n"
-                
-                
+            elif msg.text in ["Setting"]:
+                md = ""
                 if wait["likeOn"] == True: md+="��Auto like : on\n"
                 else:md+="��Auto like : off\n"
                 if wait["copy"] == True: md+="��Mimic : on\n"
@@ -3324,6 +3333,7 @@ def bot(op):
                 if wait["protectionOn"] == True: md+="��Protection : on\n\n"+ datetime.today().strftime('%H:%M:%S')
                 else:md+="��Protection : off\n\n"+ datetime.today().strftime('%H:%M:%S')
                 cl.sendText(msg.to,md)
+
 #========================================
 #------------------------------------------------
             elif msg.text in ["Gcreator:inv"]:
@@ -3361,6 +3371,7 @@ def bot(op):
                         cl.sendText(msg.to,"Backup Off\n\n"+ datetime.today().strftime('%H:%M:%S'))
                     else:
                         cl.sendText(msg.to,"Sudah off Bos\n\n"+ datetime.today().strftime('%H:%M:%S'))
+
             elif msg.text in ["Reject"]:
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
@@ -4451,7 +4462,7 @@ def bot(op):
                        cl.updateGroup(gs)
                        invsend = 0
                        Ticket = cl.reissueGroupTicket(msg.to)
-                       kl.acceptGroupInvitationByTicket(msg.to,Ticket)
+                       kg.acceptGroupInvitationByTicket(msg.to,Ticket)
                        time.sleep(0.01)
                        targets = []
                        for s in gs.members:
@@ -4463,10 +4474,10 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    kl.kickoutFromGroup(msg.to,[target])
+                                    kg.kickoutFromGroup(msg.to,[target])
                                     print (msg.to,[g.mid])
                                 except:
-                                    kl.leaveGroup(msg.to)
+                                    kg.leaveGroup(msg.to)
                                     gs = cl.getGroup(msg.to)
                         	    gs.preventJoinByTicket = True
                         	    cl.updateGroup(gs)
@@ -4485,7 +4496,7 @@ def bot(op):
                        cl.updateGroup(gs)
                        invsend = 0
                        Ticket = cl.reissueGroupTicket(msg.to)
-                       km.acceptGroupInvitationByTicket(msg.to,Ticket)
+                       kc.acceptGroupInvitationByTicket(msg.to,Ticket)
                        time.sleep(0.01)
                        targets = []
                        for s in gs.members:
@@ -4497,10 +4508,10 @@ def bot(op):
                        else:
                            for target in targets:
                                 try:
-                                    km.kickoutFromGroup(msg.to,[target])
+                                    kc.kickoutFromGroup(msg.to,[target])
                                     print (msg.to,[g.mid])
                                 except:
-                                    km.leaveGroup(msg.to)
+                                    kc.leaveGroup(msg.to)
                                     gs = cl.getGroup(msg.to)
                         	    gs.preventJoinByTicket = True
                         	    cl.updateGroup(gs)
@@ -4648,7 +4659,8 @@ def bot(op):
                 start = time.time()
                 cl.sendText(msg.to, "Access time Waiting...")
                 elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%s<==Tamii Server" % (elapsed_time))
+                cl.sendText(msg.to, "%s<==👉Shandy 😈 Server Lemah" % (elapsed_time))
+
 # ----------------- BAN MEMBER BY TAG 2TAG ATAU 10TAG MEMBER
             elif ("Bl " in msg.text):
               if msg.from_ in admin:
@@ -4787,7 +4799,7 @@ def bot(op):
                     pass
 #------------------------------------------------------------------------------------
         if op.type == 32:
-			OWN = "ua7fc5964d31f45ac75128fc2b8deb842","u406133ad4d3fbe50a2f4d51ea081d050","ua51ba06b0dd18c0bfe2cc6caa3458202","uc7f32bb28dc009916d40af87c9910ddc"
+			OWN = "u4f451941825df421ab9fe883c07b08d8"
 			if op.param2 in OWN:
 				pass
 			else:
