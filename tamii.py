@@ -1022,8 +1022,8 @@ def bot(op):
                 if not op.param2 in Bots:
                   if wait["Backup"] == True:
                     try:
-                        random.choice(KAC).inviteIntoGroup(op.param1, [op.param2])
-                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        kicker.inviteIntoGroup(op.param1, [op.param2])
+                        kicker.kickoutFromGroup(op.param1,[op.param2])
                     except Exception, e:
                         print e
                 if not op.param2 in Bots:
@@ -1064,8 +1064,8 @@ def bot(op):
                 if not op.param2 in Bots:
                   if wait["Backup"] == True:
                     try:
-                        random.choice(KAC).inviteIntoGroup(op.param1, [op.param3])
-                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param3])
+                        kicker.inviteIntoGroup(op.param1, [op.param3])
+                        kicker.kickoutFromGroup(op.param1,[op.param3])
                     except Exception, e:
                         print e
 
@@ -1077,7 +1077,7 @@ def bot(op):
                         ki.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1124,7 +1124,7 @@ def bot(op):
                         kk.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1133,7 +1133,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+            
                     X = kk.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kk.updateGroup(X)
@@ -1167,12 +1167,13 @@ def bot(op):
 
                 if Bmid in op.param3:
                     if op.param2 in Bots:
-                        pass                    
+                        pass                  
                     try:
                         kc.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
+
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1181,7 +1182,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+                      
                     X = kc.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kc.updateGroup(X)
@@ -1220,7 +1221,7 @@ def bot(op):
                         kd.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1229,7 +1230,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+                  
                     X = kd.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kd.updateGroup(X)
@@ -1268,7 +1269,8 @@ def bot(op):
                         ke.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
+
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1277,7 +1279,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+                                        
                     X = ke.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     ke.updateGroup(X)
@@ -1311,12 +1313,12 @@ def bot(op):
 
                 if Emid in op.param3:
                     if op.param2 in Bots:
-                        pass                    
+                        pass                                      
                     try:
                         kf.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1325,7 +1327,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+                      
                     X = kf.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kf.updateGroup(X)
@@ -1363,8 +1365,8 @@ def bot(op):
                     try:
                         kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        try:
-                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        try:                  
+                            kicker.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client が蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nBecause the client does not exist in the kick regulation or group.\nAdd it to the blacklist.")
                         if op.param2 in wait["blacklist"]:
@@ -1373,7 +1375,7 @@ def bot(op):
                             pass
                         else:
                             wait["blacklist"][op.param2] = True
-                            
+                      
                     X = kg.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kg.updateGroup(X)
@@ -2137,7 +2139,7 @@ def bot(op):
                         wait["commentBlack"][msg.contentMetadata["mid"]] = True
                         wait["wblack"] = False
                         cl.sendText(msg.to,"decided not to comment")
-                        
+
                elif wait["dblack"] == True:
                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
                         del wait["commentBlack"][msg.contentMetadata["mid"]]
